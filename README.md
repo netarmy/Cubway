@@ -1,7 +1,14 @@
 Subway Shell
 ============
 
-Qt version of Subway UI
+PySide version of Subway UI
 
-Compile: qmake&&make
-Execute：./QtMetro
+Dependencies
+------------
+
+* PySide with QtDeclarative
+* psutil: `pip install psutil`
+
+Running
+-------
+  `./subway-shell.py`
