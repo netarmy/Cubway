@@ -1,8 +1,9 @@
 #include <QPluginLoader>
 #include <QObject>
-#include "CubwayView.hpp"
+#include "View.hpp"
 #include "ModuleLoader.hpp"
-namespace Cubway {
+namespace Subway {
+namespace Shell {
     QObject* ModuleLoader::loadPluginModule(QString filename)
     {
         QPluginLoader* pluginloader=new QPluginLoader(filename,this);
@@ -28,3 +29,4 @@ namespace Cubway {
 #endif
 }
 
+}

@@ -1,22 +1,23 @@
-#ifndef __CUBWAY_VIEW_HPP__
-#define __CUBWAY_VIEW_HPP__
+#ifndef __CB_VIEW_HPP__
+#define __CB_VIEW_HPP__
 
-#include <QtGui/QWidget>
+#include <QtWidgets/QWidget>
 #include <QtWebKit/QWebSettings>
-#include <QtWebKit/QWebFrame>
+#include <QtWebKitWidgets/QWebFrame>
 #include <QtWebKit/QWebElement>
-#include <QtWebKit/QWebView>
-#include <QHash>
+#include <QtWebKitWidgets/QWebView>
+#include <QtCore/QHash>
 
-namespace Cubway {
+namespace Subway{
+namespace Shell {
 
-class CubwayView : public QWebView
+class View : public QWebView
 {
     Q_OBJECT
 public:
-    CubwayView(QWidget *parent = 0);
-    ~CubwayView();
-    static CubwayView *Mainview;
+    View(QWidget *parent = 0);
+    ~View();
+    static View *Mainview;
     void addQObject(QString name,QObject* qobject);
 private:
     QHash<QString, QObject*> qobjects;
@@ -27,6 +28,8 @@ public slots:
     QString getColor();
     void hide();
 };
+
+}
 
 }
 

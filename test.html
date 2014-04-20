@@ -1,5 +1,14 @@
+<!doctype html>
+<html>
+<head>
+<style type="text/css">
+html {
+background-color:#ffffff;
+}
+</style>
 <script>
-document.write(CubwayView.toString());
+document.write('tet');
+document.write(View.toString());
 document.write(moduleLoader.loadPluginModule.toString());
 var test=moduleLoader.loadPluginModule("./test.so");
 if (test==undefined) {document.write("fuck");}
@@ -9,3 +18,8 @@ var DBus=moduleLoader.loadPluginModule("./dbus.so");
 var session=DBus.sessionBus();
 document.write(session);
 </script>
+</head>
+<body>
+hah
+</body>
+</html>
