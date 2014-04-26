@@ -1,8 +1,8 @@
-#include <QtWidgets/QApplication>
+#include <QApplication>
 #include <QtWebKit>
-#include <QtWidgets/QDesktopWidget>
+#include <QDesktopWidget>
 #include "subway/shell/View.hpp"
-#include <QtWebKitWidgets/QWebInspector>
+#include <QWebInspector>
 
 int main(int argc, char *argv[])
 {

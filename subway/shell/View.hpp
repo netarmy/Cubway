@@ -1,12 +1,15 @@
 #ifndef __CB_VIEW_HPP__
 #define __CB_VIEW_HPP__
 
-#include <QtWidgets/QWidget>
-#include <QtWebKit/QWebSettings>
-#include <QtWebKitWidgets/QWebFrame>
-#include <QtWebKit/QWebElement>
-#include <QtWebKitWidgets/QWebView>
-#include <QtCore/QHash>
+#include <QWidget>
+#include <QWebSettings>
+#include <QWebFrame>
+#include <QWebElement>
+#include <QWebView>
+#include <QHash>
+#include <QMutex>
+#include <QMutexLocker>
+#include "subway/shell/ModuleLoader.hpp"
 
 namespace Subway{
 namespace Shell {
@@ -15,12 +18,12 @@ class View : public QWebView
 {
     Q_OBJECT
 public:
-    View(QWidget *parent = 0);
-    ~View();
-    static View *Mainview;
     void addQObject(QString name,QObject* qobject);
+    View();
 private:
-    QHash<QString, QObject*> qobjects;
+    QHash<QString, QObject*> m_qobjects;
+    void do_webkit_websettings ();
+    ModuleLoader moduleLoader;
 public slots:
     void javaScriptWindowObjectCleared();
     void qtAlert(QString str);

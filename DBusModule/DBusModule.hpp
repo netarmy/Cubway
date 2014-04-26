@@ -7,7 +7,6 @@
 class DBusModule: public QObject
 {
     Q_OBJECT
-    Q_PLUGIN_METADATA(IID "com.github.subway-de.subway-shell.DBusModule")
 public slots:
     QDBusConnection* sessionBus();
 };

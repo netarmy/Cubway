@@ -2,18 +2,28 @@
 #define __MODULE_HPP__
 #include <QObject>
 #include <QPluginLoader>
+#include <QDir>
 
 namespace Subway {
 namespace Shell {
 
 class ModuleLoader:public QObject
 {
-  Q_OBJECT
+    Q_OBJECT
+private:
+    QDir m_basedir;
 public:
-  //    ModuleLoader(QObject* parent=0);
+    ModuleLoader()
+        : m_basedir(QDir("."))
+    {
+    }
+
+    ModuleLoader(const QString basedir)
+        : m_basedir(basedir)
+    {
+    }
 public slots:
-  QObject* loadPluginModule(QString filename);
-  QObject* loadJsModule(QString filename);
+    QObject* loadPlugin(QString filename);
 };
 
 }

@@ -9,14 +9,9 @@ background-color:#ffffff;
 <script>
 document.write('tet');
 document.write(View.toString());
-document.write(moduleLoader.loadPluginModule.toString());
-var test=moduleLoader.loadPluginModule("./test.so");
-if (test==undefined) {document.write("fuck");}
-document.write(test.toString());
-test.hello();
-var DBus=moduleLoader.loadPluginModule("./dbus.so");
-var session=DBus.sessionBus();
-document.write(session);
+var DBus = require.loadPlugin("dbus.so");
+window.sessionBus=DBus.sessionBus();
+document.write(sessionBus);
 </script>
 </head>
 <body>

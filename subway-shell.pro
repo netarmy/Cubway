@@ -4,10 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core widgets gui
-QT      += webkit webkitwidgets
-
-#CONFIG += c++11
+QT       += core gui webkit
 
 TARGET = subway-shell
 TEMPLATE = app

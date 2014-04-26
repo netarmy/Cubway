@@ -8,4 +8,4 @@ QDBusConnection* DBusModule::sessionBus()
 }
 
 
-//Q_EXPORT_PLUGIN2("dbus",DBusModule)
+Q_EXPORT_PLUGIN2("dbus",DBusModule)
